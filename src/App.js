@@ -17,7 +17,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-var adaRef = firebase.database().ref("users/blog-posts");
+var adaRef = firebase.database().ref("blog-posts");
 
 console.log(adaRef);
 
