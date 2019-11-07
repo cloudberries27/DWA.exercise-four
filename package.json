@@ -19,7 +19,7 @@
   "engines": {
     "node": "11.x"
   },
-  "browserslist": {œ
+  "browserslist": {
     "production": [
       ">0.2%",
       "not dead",
