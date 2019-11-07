@@ -18,11 +18,9 @@ firebase.initializeApp(firebaseConfig);
 
 function writeUserData() {
   firebase.database().ref('blog-posts/p3X7iIvK2MZyC5oVs0xj').set({
-    author: notMe,
+    author: 'notMe'
   });
 }
-
-writeUserData();
 
 
 function App() {
