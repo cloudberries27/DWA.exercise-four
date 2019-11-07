@@ -1,6 +1,29 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+var firebase = require('firebase');
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyAxhbNah2ZHxDfGVUSEDSgA1bnc7zqTXiM",
+  authDomain: "anotherone98.firebaseapp.com",
+  databaseURL: "https://anotherone98.firebaseio.com",
+  projectId: "anotherone98",
+  storageBucket: "anotherone98.appspot.com",
+  messagingSenderId: "909298385013",
+  appId: "1:909298385013:web:e07a352a38800a3cba783c"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+function writeUserData() {
+  firebase.database().ref('blog-posts/p3X7iIvK2MZyC5oVs0xj').set({
+    author: notMe,
+  });
+}
+
+writeUserData();
+
 
 function App() {
   return (
