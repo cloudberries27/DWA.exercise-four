@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 var firebase = require('firebase');
+require('firebase/database');
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
