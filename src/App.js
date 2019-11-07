@@ -16,12 +16,9 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-function writeUserData() {
-  firebase.database().ref('blog-posts/p3X7iIvK2MZyC5oVs0xj').set({
-    author: 'notMe'
-  });
-}
-writeUserData();
+var adaRef = firebase.database().ref("users/blog-posts");
+
+console.log(adaRef);
 
 function App() {
   return (
