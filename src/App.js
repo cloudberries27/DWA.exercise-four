@@ -21,7 +21,7 @@ function writeUserData() {
     author: 'notMe'
   });
 }
-
+writeUserData();
 
 function App() {
   return (
