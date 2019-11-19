@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const express = require('express');
+const app =  express();
+const port = process.env.PORT || 4000;
+const path = require('path');
 
-export default App;
+const indexRoute = require ('./routes/index.js');
+const postsRoute =  require ('./routes/posts.js');
+const submitRoute =  require ('./routes/submit.js');
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use("/", indexRoute);
+app.use("/post", postsRoute);
+app.use("/submit", submitRoute);
+
+app.use("/submit-form", (req,res)=>{
+		res.sendFIle("/public/form.html", {rest: __dirname})
+})
+
+app.listen( port, () == console.log(`Example app listening on port ${port}`));
