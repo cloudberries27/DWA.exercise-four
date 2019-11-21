@@ -34,14 +34,14 @@ router.get("/", (req, res) => {
   let titleVal = req.query.title ? req.query.title : '';
   let textVal = req.query.text ? req.query.text : '';
   let authorVal = req.query.author ? req.query.author : '';
-  dc.collection("blog-posts")
+  db.collection("blog-posts")
     .add({
       title: titleVal,
       text: textVal,
       author: authorVal
     })
     .then(ref => res.send(ref))
-    .catch( e=> res.send(e))
+    .catch( e => res.send(e))
 })
 
 module.exports = router;
