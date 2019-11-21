@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import './App.css';
 
 const express = require('express');
@@ -22,7 +21,6 @@ app.use("/submit-form", (req,res)=>{
 })
 
 app.listen( port, () == console.log(`Example app listening on port ${port}`));
-=======
 import logo from './logo.svg';
 import './App.css';
 var firebase = require('firebase');
@@ -44,27 +42,3 @@ firebase.initializeApp(firebaseConfig);
 var adaRef = firebase.database().ref("blog-posts");
 
 console.log(adaRef);
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
->>>>>>> 8aeb33cc8f2c076408c6ed66a0b39d4f8ec3c52f
