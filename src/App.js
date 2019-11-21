@@ -20,7 +20,7 @@ app.use("/submit-form", (req,res)=>{
 		res.sendFIle("/public/form.html", {root: __dirname})
 })
 
-app.listen( port, () == console.log(`Example app listening on port ${port}`));
+app.listen( port, () => console.log(`Example app listening on port ${port}`));
 import logo from './logo.svg';
 import './App.css';
 var firebase = require('firebase');
