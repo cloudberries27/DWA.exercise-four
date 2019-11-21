@@ -1,14 +1,11 @@
-import React from 'react';
-import './App.css';
-
 const express = require('express');
 const app =  express();
 const port = process.env.PORT || 4000;
 const path = require('path');
 
-const indexRoute = require ('../routes/index.js');
-const postsRoute =  require ('../routes/posts.js');
-const submitRoute =  require ('../routes/submit.js');
+const indexRoute = require ('./routes/index.js');
+const postsRoute =  require ('./routes/posts.js');
+const submitRoute =  require ('./routes/submit.js');
 
 app.use(express.static(path.join(__dirname, "public")));
 
