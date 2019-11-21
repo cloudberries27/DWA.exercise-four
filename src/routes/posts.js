@@ -15,9 +15,9 @@ const firebaseConfig = {
 firebase.intializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-router.get(“/:id”, (req, res)=>{
+router.get("/:id", (req, res)=>{
   let queryId = req.params.id;
-	let docRef = db.collection(“blog-posts”).doc(queryId);
+	let docRef = db.collection("blog-posts").doc(queryId);
 	docRef.get().then( doc => res.send(doc.data()))
 	.catch (error => res.send(error));
 });
