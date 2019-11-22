@@ -12,7 +12,7 @@ const firebaseConfig = {
   appId: "1:909298385013:web:e07a352a38800a3cba783c"
 };
 
-if (!firebase.apps.length) { 
+if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
 
@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
 
 
 let articleRef = db.collection('blog-posts');
-let query = articleRef.where('Author', '==', 'Joe').get()
+let query = articleRef.where('Author', '==', 'DUH ME').get()
   .then(post => {
     if (post.empty) {
       console.log('does not exist.');
