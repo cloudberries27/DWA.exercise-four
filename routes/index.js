@@ -12,8 +12,9 @@ const firebaseConfig = {
   appId: "1:909298385013:web:e07a352a38800a3cba783c"
 };
 
-const firestoreDatabase = firebase.intializeApp(firebaseConfig);
-const db = firestoreDatabase.firestore();
+if (!firebase.apps.length) { 
+    firebase.initializeApp(firebaseConfig);
+}
 
 let posts = [];
 db.collection('blog-posts').get()
@@ -23,9 +24,28 @@ db.collection('blog-posts').get()
     });
   })
   .catch(err => {
-    console.log('errpr', err);
+    console.log('error', err);
   });
 
 router.get('/', (req, res) => {
   res.send(posts);
 })
+
+
+let articleRef = db.collection('blog-posts');
+let query = articleRef.where('Author', '==', 'Joe').get()
+  .then(post => {
+    if (post.empty) {
+      console.log('does not exist.');
+      return;
+    }
+
+    post.forEach(docs => {
+      console.log(docs.id, '=>', docs.data());
+    });
+  })
+  .catch(err => {
+    console.log('error', err);
+  });
+
+module.exports = router;

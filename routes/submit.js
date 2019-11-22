@@ -12,13 +12,16 @@ const firebaseConfig = {
   appId: "1:909298385013:web:e07a352a38800a3cba783c"
 };
 
-firebase.intializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+
 const db = firebase.firestore();
 
 const sampleData = {
 	title: "Test",
-	text: "Text Text",
-	author: "DUH"
+	text: "It's cloudy today, I don't like it",
+	author: "DUH ME"
 }
 
 router.get("/test", (req, res) => {
@@ -41,7 +44,7 @@ router.get("/", (req, res) => {
       author: authorVal
     })
     .then(ref => res.send(ref))
-    .catch( e => res.send(e))
+    .catch(e => res.send(e))
 })
 
 module.exports = router;

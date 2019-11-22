@@ -12,13 +12,19 @@ const firebaseConfig = {
   appId: "1:909298385013:web:e07a352a38800a3cba783c"
 };
 
-firebase.intializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 const db = firebase.firestore();
+
+var getSource = {
+    source: 'default'
+}
 
 router.get("/:id", (req, res)=>{
   let queryId = req.params.id;
 	let docRef = db.collection("blog-posts").doc(queryId);
-	docRef.get().then( doc => res.send(doc.data()))
+	docRef.get(getSource).then( doc => res.send(doc.data()))
 	.catch (error => res.send(error));
 });
 
